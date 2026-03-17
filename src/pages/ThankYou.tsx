@@ -30,24 +30,28 @@ const benefits = [
     title: "Ative a sua Carteira Infinita",
     description:
       "Deixe de depender apenas do seu esforço individual e utilize a força da rede para captar novos clientes.",
+    boldParts: ["força da rede", "captar novos clientes"],
   },
   {
     icon: Sparkles,
     title: "Ponte de Valor",
     description:
       "Rentabilize indicações por meio do Hub. Quanto mais negócios gerar, maior será o seu percentual de ganho.",
+    boldParts: ["Rentabilize indicações", "percentual de ganho"],
   },
   {
     icon: Shield,
     title: "Selo de Autoridade",
     description:
       "Posicione-se como um Práticer Member e diferencie-se com autoridade em um mercado cada vez mais competitivo.",
+    boldParts: ["Práticer Member", "autoridade"],
   },
   {
     icon: Users,
     title: "Networking de Elite",
     description:
       "Conecte-se a parceiros estratégicos e acesse conteúdos e mentorias exclusivos.",
+    boldParts: ["parceiros estratégicos", "mentorias exclusivos"],
   },
 ];
 
