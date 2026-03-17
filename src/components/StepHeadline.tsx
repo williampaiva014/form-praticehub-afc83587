@@ -31,11 +31,9 @@ const StepHeadline = ({ onNext }: StepHeadlineProps) => {
         transition={{ delay: 0.3, duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
         className="glass-card w-full max-w-[620px]"
       >
-        <TextReveal
-          text="Pare de tentar crescer sozinho. Quem joga isolado só sobrevive. Quem se conecta, domina."
-          className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-foreground text-balance mb-6"
-          delay={0.5}
-        />
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-foreground text-balance mb-6">
+          Pare de tentar <span className="text-primary font-extrabold">crescer sozinho</span>. Quem joga isolado só sobrevive. Quem se conecta, <span className="text-primary font-extrabold">domina</span>.
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 15 }}
