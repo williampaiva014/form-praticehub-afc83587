@@ -296,7 +296,7 @@ const ThankYou = () => {
                     <AccordionTrigger className="px-6 py-5 text-foreground text-left font-medium hover:no-underline hover:text-primary transition-colors">
                       {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-5 text-muted-foreground text-sm leading-relaxed">
+                    <AccordionContent className="px-6 pb-5 text-white/90 text-sm leading-relaxed">
                       {item.answer}
                     </AccordionContent>
                   </AccordionItem>
