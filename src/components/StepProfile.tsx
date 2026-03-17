@@ -269,7 +269,7 @@ const StepProfile = ({ data, onChange, onSubmit }: StepProfileProps) => {
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
       transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-      className="flex flex-col items-center justify-center min-h-[100dvh] px-4 sm:px-6 py-8 pt-10"
+      className="flex flex-col items-center justify-start min-h-[100dvh] px-4 sm:px-6 py-6 pt-8 sm:pt-10 sm:justify-center overflow-y-auto"
     >
       <img src={logo} alt="Prátice Hub" className="w-36 md:w-44 mb-3" />
 
