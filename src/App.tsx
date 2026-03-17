@@ -9,6 +9,7 @@ import TermsOfUse from "./pages/TermsOfUse.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import ThankYou from "./pages/ThankYou.tsx";
 import CookieConsent from "./components/CookieConsent.tsx";
+import WhatsAppButton from "./components/WhatsAppButton.tsx";
 
 const queryClient = new QueryClient();
 
