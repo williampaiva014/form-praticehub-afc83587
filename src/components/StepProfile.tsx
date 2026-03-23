@@ -124,7 +124,7 @@ const StepProfile = ({ data, onChange, onSubmit }: StepProfileProps) => {
 
   const renderSelect = (
     key: DropdownKey,
-    label: string,
+    label: React.ReactNode,
     value: string,
     placeholder: string,
     options: string[],
@@ -175,7 +175,7 @@ const StepProfile = ({ data, onChange, onSubmit }: StepProfileProps) => {
 
   const renderMultiSelect = (
     key: DropdownKey,
-    label: string,
+    label: React.ReactNode,
     selected: string[],
     placeholder: string,
     options: string[],
@@ -275,15 +275,18 @@ const StepProfile = ({ data, onChange, onSubmit }: StepProfileProps) => {
       <img src={logo} alt="Prátice Hub" className="w-36 md:w-44 mb-3" />
 
       <div ref={containerRef} className="glass-card w-full max-w-[480px]">
-        <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-foreground mb-6">
+        <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-foreground mb-2">
           Perfil Profissional
         </h2>
+        <p className="text-sm text-muted-foreground mb-6 font-medium">
+          Os campos marcados com <span className="text-primary">*</span> são obrigatórios
+        </p>
 
         <div className="space-y-4">
-          {renderSelect("estado", "Estado", data.estado, "Selecione seu estado", ESTADOS, "estado", MapPin)}
+          {renderSelect("estado", <>Estado <span className="text-primary">*</span></>, data.estado, "Selecione seu estado", ESTADOS, "estado", MapPin)}
 
           <div className="relative">
-            <label className="cinema-input-label mb-1.5 block">Cidade</label>
+            <label className="cinema-input-label mb-1.5 block">Cidade <span className="text-primary">*</span></label>
             <button
               type="button"
               onClick={() => { if (data.estado) toggle("cidade"); }}
@@ -334,11 +337,11 @@ const StepProfile = ({ data, onChange, onSubmit }: StepProfileProps) => {
             )}
           </div>
 
-          {renderMultiSelect("servicos", "Quais serviços você presta?", data.servicos, "Selecione seus serviços", SERVICOS, "servicos", 3, Briefcase)}
+          {renderMultiSelect("servicos", <>Quais serviços você presta? <span className="text-primary">*</span></>, data.servicos, "Selecione seus serviços", SERVICOS, "servicos", 3, Briefcase)}
 
-          {renderSelect("clientes", "Seus clientes são principalmente", data.clientes, "Selecione uma opção", clienteOptions, "clientes", Users)}
+          {renderSelect("clientes", <>Seus clientes são principalmente <span className="text-primary">*</span></>, data.clientes, "Selecione uma opção", clienteOptions, "clientes", Users)}
 
-          {renderMultiSelect("objetivo", "Qual seu maior objetivo no hub?", data.objetivo, "Selecione seus objetivos", OBJETIVOS, "objetivo", 2, Target)}
+          {renderMultiSelect("objetivo", <>Qual seu maior objetivo no hub? <span className="text-primary">*</span></>, data.objetivo, "Selecione seus objetivos", OBJETIVOS, "objetivo", 2, Target)}
         </div>
 
         <motion.button

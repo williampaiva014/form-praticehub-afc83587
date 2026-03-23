@@ -29,9 +29,9 @@ const formatPhone = (value: string) => {
 };
 
 const fields = [
-  { key: "nome" as const, label: "Nome completo", placeholder: "Ex: João Silva", type: "text", autoComplete: "name", icon: User },
-  { key: "email" as const, label: "Email", placeholder: "joao@empresa.com", type: "email", autoComplete: "email", icon: Mail },
-  { key: "whatsapp" as const, label: "WhatsApp", placeholder: "(99) 99999-9999", type: "tel", autoComplete: "tel", icon: Phone },
+  { key: "nome" as const, label: <>Nome completo <span className="text-primary">*</span></>, placeholder: "Ex: João Silva", type: "text", autoComplete: "name", icon: User },
+  { key: "email" as const, label: <>Email <span className="text-primary">*</span></>, placeholder: "joao@empresa.com", type: "email", autoComplete: "email", icon: Mail },
+  { key: "whatsapp" as const, label: <>WhatsApp <span className="text-primary">*</span></>, placeholder: "(99) 99999-9999", type: "tel", autoComplete: "tel", icon: Phone },
   { key: "instagram" as const, label: "Instagram (opcional)", placeholder: "@seuusuario", type: "text", autoComplete: "off", icon: Instagram },
 ];
 
@@ -72,9 +72,12 @@ const StepContact = ({ data, onChange, onNext }: StepContactProps) => {
       <img src={logo} alt="Prátice Hub" className="w-36 md:w-44 mb-3" />
 
       <div className="glass-card w-full max-w-[480px]">
-        <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-foreground mb-8">
+        <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-foreground mb-2">
           Dados de Contato
         </h2>
+        <p className="text-sm text-muted-foreground mb-8 font-medium">
+          Os campos marcados com <span className="text-primary">*</span> são obrigatórios
+        </p>
 
         <div className="space-y-4">
           {fields.map(({ key, label, placeholder, type, autoComplete, icon: Icon }) => (
