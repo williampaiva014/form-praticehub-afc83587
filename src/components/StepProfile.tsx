@@ -132,9 +132,11 @@ const StepProfile = ({ data, onChange, onSubmit }: StepProfileProps) => {
     Icon: React.ElementType
   ) => (
     <div className="relative" ref={el => dropdownRefs.current[key] = el}>
-      <label className="cinema-input-label mb-1.5 block">{label}</label>
+      <label id={`${key}-label`} className="cinema-input-label mb-1.5 block">{label}</label>
       <button
+        id={key || undefined}
         type="button"
+        aria-labelledby={`${key}-label`}
         onClick={() => toggle(key)}
         className="cinema-input text-left flex items-center gap-2"
       >
@@ -191,13 +193,15 @@ const StepProfile = ({ data, onChange, onSubmit }: StepProfileProps) => {
     return (
       <div className="relative" ref={el => dropdownRefs.current[key] = el}>
         <div className="flex items-center justify-between mb-1.5">
-          <label className="cinema-input-label">{label}</label>
+          <label id={`${key}-label`} className="cinema-input-label">{label}</label>
           <span className={`text-xs font-medium ${atLimit ? "text-gold" : "text-muted-foreground"}`}>
             Máx. {max}
           </span>
         </div>
         <button
+          id={key || undefined}
           type="button"
+          aria-labelledby={`${key}-label`}
           onClick={() => toggle(key)}
           className="cinema-input text-left flex items-center gap-2"
         >
@@ -275,9 +279,9 @@ const StepProfile = ({ data, onChange, onSubmit }: StepProfileProps) => {
       <img src={logo} alt="Prátice Hub" className="w-36 md:w-44 mb-3" />
 
       <div ref={containerRef} className="glass-card w-full max-w-[480px]">
-        <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-foreground mb-2">
+        <h1 className="text-xl md:text-2xl font-semibold tracking-tight text-foreground mb-2">
           Perfil Profissional
-        </h2>
+        </h1>
         <p className="text-sm text-muted-foreground mb-6 font-medium">
           Os campos marcados com <span className="text-primary">*</span> são obrigatórios
         </p>
@@ -307,12 +311,14 @@ const StepProfile = ({ data, onChange, onSubmit }: StepProfileProps) => {
               >
                 <div className="px-3 py-2 border-b border-white/10">
                   <input
+                    id="cidade-search"
                     type="text"
                     value={cidadeFilter}
                     onChange={(e) => setCidadeFilter(e.target.value)}
                     placeholder="Buscar cidade..."
                     className="w-full bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
                     autoFocus
+                    aria-label="Buscar cidade"
                   />
                 </div>
                 <div className="overflow-y-auto max-h-[50vh] sm:max-h-48">

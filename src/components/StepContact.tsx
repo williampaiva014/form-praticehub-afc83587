@@ -72,9 +72,9 @@ const StepContact = ({ data, onChange, onNext }: StepContactProps) => {
       <img src={logo} alt="Prátice Hub" className="w-36 md:w-44 mb-3" />
 
       <div className="glass-card w-full max-w-[480px]">
-        <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-foreground mb-2">
+        <h1 className="text-xl md:text-2xl font-semibold tracking-tight text-foreground mb-2">
           Dados de Contato
-        </h2>
+        </h1>
         <p className="text-sm text-muted-foreground mb-8 font-medium">
           Os campos marcados com <span className="text-primary">*</span> são obrigatórios
         </p>
@@ -82,12 +82,13 @@ const StepContact = ({ data, onChange, onNext }: StepContactProps) => {
         <div className="space-y-4">
           {fields.map(({ key, label, placeholder, type, autoComplete, icon: Icon }) => (
             <div key={key} className="relative">
-              <label className="cinema-input-label mb-1.5 block">
+              <label htmlFor={key} className="cinema-input-label mb-1.5 block">
                 {label}
               </label>
               <div className="relative">
                 <Icon className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 cinema-input-icon" />
                 <input
+                  id={key}
                   type={type}
                   inputMode={type === "tel" ? "tel" : undefined}
                   autoComplete={autoComplete}

@@ -102,6 +102,21 @@ const ThankYou = () => {
         backgroundAttachment: "fixed",
       }}
     >
+      {/* FAQ Schema for SEO */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqItems.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer
+            }
+          }))
+        })}
+      </script>
       <div className="fixed inset-0 z-0" style={{
         background: "radial-gradient(ellipse at 20% 50%, hsl(42 78% 55% / 0.06) 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, hsl(42 78% 55% / 0.04) 0%, transparent 60%)",
       }} />
