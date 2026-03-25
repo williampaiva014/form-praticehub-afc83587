@@ -190,7 +190,7 @@ const ThankYou = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://apps.apple.com"
+              href="https://apps.apple.com/us/app/pr%C3%A1tice-hub/id6760728943"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-transform hover:scale-105"
@@ -354,7 +354,7 @@ const ThankYou = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://apps.apple.com"
+                href="https://apps.apple.com/us/app/pr%C3%A1tice-hub/id6760728943"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-transform hover:scale-105"

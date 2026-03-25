@@ -1,0 +1,10 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /formnovomembro/
+
+# Se o arquivo ou diretório existir, serve normalmente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redireciona tudo para o index.html para o React Router gerenciar
+RewriteRule ^ index.html [QSA,L]

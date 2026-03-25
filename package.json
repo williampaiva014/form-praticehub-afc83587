@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && powershell -Command \"Copy-Item 'public/.htaccess' 'dist/.htaccess' -Force\"",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
