@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cadastro.praticehub.com.br/sitemap.xml
+Sitemap: https://cadastro.praticehub.com.br/formnovomembro/sitemap.xml
