@@ -52,7 +52,7 @@ const Index = () => {
 
   const handleSubmit = () => {
     console.log("Lead data:", { ...contactData, ...profileData });
-    navigate("/obrigado", { state: { nome: contactData.nome } });
+    navigate("/obrigado", { state: { nome: contactData.nome, fromFunnel: true } });
   };
 
   return (

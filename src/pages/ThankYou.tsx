@@ -91,8 +91,13 @@ const ThankYou = () => {
   const firstName = nome.split(" ")[0];
 
   useEffect(() => {
+    const isFromFunnel = (location.state as { fromFunnel?: boolean })?.fromFunnel;
+    if (!isFromFunnel) {
+      navigate("/", { replace: true });
+      return;
+    }
     window.scrollTo(0, 0);
-  }, []);
+  }, [location.state, navigate]);
 
   return (
     <div
