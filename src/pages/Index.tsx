@@ -50,8 +50,36 @@ const Index = () => {
     setStep("profile");
   }, []);
 
-  const handleSubmit = () => {
-    console.log("Lead data:", { ...contactData, ...profileData });
+  const WEBHOOK_URL = "https://hook.us2.make.com/ojbijvuh5n80h1074m94vchurd5nyhd9";
+
+  const handleSubmit = async () => {
+    const payload = {
+      // Dados de contato
+      nome_completo: contactData.nome,
+      email: contactData.email,
+      whatsapp: contactData.whatsapp,
+      instagram: contactData.instagram,
+      // Dados do perfil profissional
+      estado: profileData.estado,
+      cidade: profileData.cidade,
+      servicos_prestados: profileData.servicos,
+      perfil_cliente: profileData.clientes,
+      objetivos_no_hub: profileData.objetivo,
+      // Metadados
+      origem: "Formulário Novo Membro",
+      data_envio: new Date().toISOString(),
+    };
+
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+    } catch (error) {
+      console.error("Erro ao enviar para webhook:", error);
+    }
+
     navigate("/obrigado", { state: { nome: contactData.nome, fromFunnel: true } });
   };
 
